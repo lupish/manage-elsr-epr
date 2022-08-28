@@ -1,15 +1,19 @@
 from os import walk
 import csv
+import read_heuristica
 
 def sort_dict(x):
     return (str(x['config']) + x['file'])
 
 if __name__ == "__main__":
     config = 10
-    path_in = "C:\\proy_io\\Codigo\\archivosDAT\\nT12-nL1\\config{i}\\OUT\\"
-    name_in = "HEURISTICA_tasas10_v3_it200_datos_nT12_nL1.csv"
-    path_out = "C:\\proy_io\\Codigo\\archivosDAT\\nT12-nL1\\OUT\\all\\"
+    path_in = "C:\\proy_io\\Codigo\\archivosDAT\\nT12-nL3\\config{i}\\OUT\\"
+    name_in = "HEURISTICA_tasas05_v3_it1_datos_nT12_nL3.csv"
+    path_out = "C:\\proy_io\\Codigo\\archivosDAT\\nT12-nL3\\OUT\\all\\"
     name_out = "CONFIGS-" + name_in
+
+    hueristic = 1
+    read_heuristica.main(config, hueristic)
 
     datos = []
     for i in range(1, config+1):
@@ -27,7 +31,6 @@ if __name__ == "__main__":
     # datos.sort(key=sort_dict)
     datos.sort(key=lambda e: (int(e['config']), e['file']))
 
-            
     print("OUT = " + path_out + name_out)      
     with open(path_out + name_out, 'w', newline='') as csvfile:
         print("creando el output")
