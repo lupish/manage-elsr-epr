@@ -168,9 +168,10 @@ def generar_dats(nT, nL, config):
 if __name__ == "__main__":
     print("*** GENERATE DAT FILES ***")
 
-    nT = 12
-    nL = 2
+    nT = 24
+    nL = 3
     configMAX = 10
+    configMIN = 2
 
-    for c in range(1, configMAX+1):
+    for c in range(configMIN, configMAX+1):
         generar_dats(nT, nL, c)
