@@ -68,10 +68,3 @@ if __name__ == "__main__":
                     file_name_out = file_name.split(".out")[0] + ".csv"
         datos.sort(key=lambda e: (e['tasa'], e['file']))
         writer.writerows(datos)
-                
-
-        """print("\tLlega al óptimo = " + str(cantLlega))
-        print("\tNo llega al óptimo = " + str(cantNoLlega))
-        print("\tPromedio gap = " + str(promedio_gap))
-        print("\tMax gap = " + str(max_gap))"""
-
