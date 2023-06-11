@@ -49,8 +49,7 @@ if __name__ == "__main__":
         if (tasa == Tasas.tasa0.value):
             name_in = "{algoritmo}_{version}_it{its}_{saltos}datos_nT24_{cliente}.csv".format(algoritmo=algoritmo, version=version, its=its, saltos=saltos, cliente=cliente)
         else:
-            name_in = "{algoritmo}_{tasa}_{version}_it{its}_{saltos}datos_nT24_{cliente}.csv".format(algoritmo=algoritmo, tasa=tasa, version=version, its=its, saltos=saltos, cliente=cliente)    
-        # name_in = "HEURISTICA_tasas10_{v}_it50_datos_nT24_nL3.csv".format(v=version)
+            name_in = "{algoritmo}_{tasa}_{version}_it{its}_{saltos}datos_nT24_{cliente}.csv".format(algoritmo=algoritmo, tasa=tasa, version=version, its=its, saltos=saltos, cliente=cliente)
     else:
         if (solverTipo.inco_15min):
             if (tasa == Tasas.tasa0.value):
@@ -59,7 +58,6 @@ if __name__ == "__main__":
                 name_in = "{algoritmo}_{tasa}_nT24_{cliente}_nuevoMod_INCO.csv".format(algoritmo=algoritmo, tasa=tasa, cliente=cliente)
         else:
             if (tasa == Tasas.tasa0.value):
-                # name_in = "{algoritmo}_nT24_{cliente}_nuevoMod.csv".format(algoritmo=algoritmo, cliente=cliente)
                 name_in = "{algoritmo}_tasas00_nT24_{cliente}_nuevoMod_INCO.csv".format(algoritmo=algoritmo, cliente=cliente)
             else:
                 name_in = "{algoritmo}_{tasa}_nT24_{cliente}_nuevoMod.csv".format(algoritmo=algoritmo, tasa=tasa, cliente=cliente)
@@ -85,13 +83,10 @@ if __name__ == "__main__":
 
         with open(path_file, "r") as f:
             spamreader = csv.reader(f, delimiter=',')
-            # print(spamreader)
             for row in spamreader:
-                # print(row)
                 if row[0] != "file":
                     dato = {'config': i, 'file': row[0], 'cost': row[1], 'runtime': row[2]}
                     datos.append(dato)
-    # datos.sort(key=sort_dict)
     datos.sort(key=lambda e: (int(e['config']), e['file']))
 
     print("OUT = " + path_out + name_out)      
