@@ -35,10 +35,10 @@ def sort_dict(x):
 
 if __name__ == "__main__":
     config = 10
-    version = "v3"
+    version = "v1"
     its = "50"
     tasa = Tasas.tasa0.value
-    saltos = Saltos.saltos3.value
+    saltos = Saltos.saltos0.value
     algoritmo = Algoritmo.heuristica.value
     cliente = Clientes.cliente3.value
     run_ReadHeuristic = 1

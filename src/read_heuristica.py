@@ -18,7 +18,7 @@ def read_heuristics(path, heuristic):
 
             # if file_name.find('.out') != -1: # heuristica
             # if file_name.find('.txt') != -1: # solver
-            if file_name.find(text_find) != -1:
+            if file_name.find(text_find) != -1 and file_name.find("api") == -1:
                 dato = {}
                 datos = []
                 f = open(path + file_name, "r")
@@ -35,12 +35,14 @@ def read_heuristics(path, heuristic):
                         datos.append(dato)
                 datos.sort(key=sort_dict)
                 
+                print(file_name)
                 if (heuristic == 1):
                     # HEURISTICA
                     file_name_out = "HEURISTICA_" + file_name.split("OUT_")[1].split(".out")[0] + ".csv"
                 else:
                     # SOLVER
                     file_name_out = "SOLVER_" + file_name.split("icor_")[1].split(".txt")[0] + ".csv"
+                print(file_name_out)
                 
                 # HEURISTICA
                 # file_name_out = "HEURISTICA_" + file_name.split("OUT_")[1].split(".out")[0] + ".csv"
